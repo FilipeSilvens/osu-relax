@@ -3,7 +3,7 @@
 	osu-relax - external 'relax-like' input simulator
 	Read more at https://aixxe.net/2016/10/osu-game-hacking
 
-	Copyright (C) 2016, aixxe. <me@aixxe.net>
+	Copyright (C) 2017, aixxe. <me@aixxe.net>
 	
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
