@@ -58,7 +58,7 @@ void shutdown();
 
 int wmain(int argc, wchar_t* argv[]) 
 {
-	FreeConsole();
+	//FreeConsole();
 
 	// set window title for undetectability.
 	SetConsoleTitle(newWindowTitle);
@@ -91,11 +91,16 @@ int wmain(int argc, wchar_t* argv[])
 
 	// find the process id of osu!
 	game_process_id = get_process_id();
+
+	cout << "Searching for osu!.exe process..." << endl;
+
 	while(!game_process_id) 
 	{
 		game_process_id = get_process_id();
 		this_thread::sleep_for(chrono::milliseconds(100));
 	}
+
+	cout << " Found it!" << endl;
 
 	// open the process with memory reading access.
 	game_process = OpenProcess(PROCESS_VM_READ, false, game_process_id);
