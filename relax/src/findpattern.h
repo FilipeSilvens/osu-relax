@@ -1,6 +1,5 @@
 #pragma once
 
-#include <Windows.h>
 
 DWORD FindPattern(HANDLE process, unsigned char pattern[]) 
 {

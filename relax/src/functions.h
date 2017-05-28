@@ -3,7 +3,8 @@
 #include <tlhelp32.h>
 #include "relax.h"
 
-inline const DWORD get_process_id() {
+inline const DWORD get_process_id() 
+{
 	// store process ID in here to return later.
 	DWORD process_id = NULL;
 
@@ -29,13 +30,15 @@ inline const DWORD get_process_id() {
 	return process_id;
 };
 
-inline const DWORD find_time_address() {
+inline const DWORD find_time_address() 
+{
 	// scan process memory for array of bytes.
 	DWORD time_ptr = FindPattern(game_process, PBYTE(TIME_SIGNATURE)) + 7;
 
 	DWORD time_address = NULL;
 
-	if (!ReadProcessMemory(game_process, LPCVOID(time_ptr), &time_address, sizeof DWORD, nullptr)) {
+	if (!ReadProcessMemory(game_process, LPCVOID(time_ptr), &time_address, sizeof DWORD, nullptr)) 
+	{
 		return false;
 	}
 
@@ -43,7 +46,8 @@ inline const DWORD find_time_address() {
 };
 
 
-inline const int32_t get_elapsed_time() {
+inline const int32_t get_elapsed_time() 
+{
 	// read and return the elapsed time in the current beatmap.
 	int32_t current_time = NULL;
 
@@ -55,7 +59,8 @@ inline const int32_t get_elapsed_time() {
 	return current_time;
 };
 
-inline void set_key_pressed(char key, bool pressed) {
+inline void set_key_pressed(char key, bool pressed) 
+{
 	// send a key press input.
 	INPUT key_press = {0};
 	key_press.type = INPUT_KEYBOARD;

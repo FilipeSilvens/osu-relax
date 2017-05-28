@@ -24,6 +24,7 @@
 
 */
 
+#include <Windows.h>
 #include <thread>
 #include <iostream>
 #include <random>
@@ -109,7 +110,8 @@ int wmain(int argc, wchar_t* argv[])
 	// find the actual time address.
 	time_address = find_time_address();
 
-	if (!time_address) {
+	if (!time_address) 
+	{
 		cerr << "error: failed to find pointer to time address." << endl;
 		return EXIT_FAILURE;
 	}
@@ -174,7 +176,8 @@ int wmain(int argc, wchar_t* argv[])
 			single_tap_current = obj2time - obj1time;
 		}
 
-		if (time >= object.start_time + delayStart(randGen) && !key_down) {
+		if (time >= object.start_time + delayStart(randGen) && !key_down) 
+		{
 
 			// chance to issue a 100
 			int hundredchance = rand() % 100 + 1;
