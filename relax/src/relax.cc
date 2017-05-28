@@ -92,15 +92,11 @@ int wmain(int argc, wchar_t* argv[])
 	// find the process id of osu!
 	game_process_id = get_process_id();
 
-	cout << "Searching for osu!.exe process..." << endl;
-
-	while(!game_process_id) 
+	if(!game_process_id) 
 	{
-		game_process_id = get_process_id();
-		this_thread::sleep_for(chrono::milliseconds(100));
+		cerr << " Couldn't find osu!.exe" << endl;
+		return false;
 	}
-
-	cout << " Found it!" << endl;
 
 	// open the process with memory reading access.
 	game_process = OpenProcess(PROCESS_VM_READ, false, game_process_id);
