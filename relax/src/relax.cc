@@ -58,7 +58,7 @@ void shutdown();
 
 int wmain(int argc, wchar_t* argv[]) 
 {
-	//FreeConsole();
+	FreeConsole();
 
 	// set window title for undetectability.
 	SetConsoleTitle(newWindowTitle);
