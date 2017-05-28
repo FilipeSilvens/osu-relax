@@ -3,6 +3,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <stdint.h>
 
 enum ObjectType: uint8_t {
 	HITOBJECT_CIRCLE = 1,

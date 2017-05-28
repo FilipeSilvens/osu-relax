@@ -99,43 +99,53 @@ inline bool beatmap::ParseDifficultySettings(std::wstring difficulty_line) {
 	return true;
 }
 
-bool beatmap::Parse(std::wstring filename) {
+bool beatmap::Parse(std::wstring filename) 
+{
 	std::wifstream beatmap_file(filename, std::ifstream::in);
 
-	if (!beatmap_file.good()) {
+	if (!beatmap_file.good()) 
+	{
 		return false;
 	}
 
 	std::wstring current_line;
 
-	while (std::getline(beatmap_file, current_line)) {
+	while (std::getline(beatmap_file, current_line)) 
+	{
 		static std::wstring current_section;
 
-		if (!current_line.empty() && current_line.front() == '[' && current_line.back() == ']') {
+		if (!current_line.empty() && current_line.front() == '[' && current_line.back() == ']') 
+		{
 			current_section = current_line.substr(1, current_line.length() - 2);
 			continue;
 		}
 
-		if (current_section.empty()) {
+		if (current_section.empty()) 
+		{
 			continue;
 		}
 
-		if (!current_section.compare(L"Difficulty")) {
+		if (!current_section.compare(L"Difficulty")) 
+		{
 			this->ParseDifficultySettings(current_line);
-		} else {
+		} 
+		else 
+		{
 			std::vector<std::wstring> values;
 
-			if (!split_line(current_line, L',', values)) {
+			if (!split_line(current_line, L',', values)) 
+			{
 				continue;
 			}
 
-			if (!current_section.compare(L"TimingPoints")) {
+			if (!current_section.compare(L"TimingPoints")) 
+			{
 				this->ParseTimingPoint(values);
-			} else if (!current_section.compare(L"HitObjects")) {
+			} else if (!current_section.compare(L"HitObjects")) 
+			{
 				this->ParseHitObject(values);
 			}
 		}
 	}
-
 	return true;
 }
