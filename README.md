@@ -2,14 +2,19 @@
 
 Emulates the behaviour of the Relax gameplay modifier externally.
 
+Modified by [FilipeSilvens](https://steamcommunity.com/id/FilipeSilvens) to add a more "human" feel to the cheat.
+
 For more details, read the [tutorial](https://aixxe.net/2016/10/osu-game-hacking) here.
 
 ## Usage
 * Ensure the signature defined in `relax.h` is up-to-date for the active release channel.
-    * If you are using _Stable (Fallback)_ be sure to uncomment the correct signature.
-* Edit keys in `relax.cc` if you aren't using the default <kbd>Z</kbd> and <kbd>X</kbd> keys for clicking.
+    * If you are using _Stable (Fallback)_ be sure to uncomment the correct signature in `relax.h`.
+* Make sure you have created a `config.ini` where your executable is with the [following parameters](https://pastebin.com/raw/sFyeeST9)
+* Configure the config.ini to the settings of your preference.
+    * If you don't use the default <kbd>Z</kbd> and <kbd>X</kbd> for clicking, you can find your hex value for your key [here.](https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731(v=vs.85).aspx)
 * Drag .osu beatmap file onto `relax.exe` while on the song selection screen.
-* Start playing the song, switch back to the program and press enter.
+* Start playing the song and if the `ready.wav` is heard, you are ready to go.
+    * Note, if you do not hear the `ready.wav`, please restart both `osu!` and the cheat because it may have found the wrong time address.
 
 ## Demonstration
 
