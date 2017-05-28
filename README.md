@@ -18,7 +18,7 @@ For more details, read the [tutorial](https://aixxe.net/2016/10/osu-game-hacking
 * Start playing the song and if the `ready.wav` is heard, you are ready to go.
     * Note, if you do not hear the `ready.wav`, please restart both `osu!` and the cheat because it may have found the wrong time address. While this is rare, it can sometimes happen.
 	
-You can close osu!relax at any time by pressing the <kbd>INS</kbd> (insert) key.
+You can close osu!relax at any time by pressing the <kbd>Home</kbd> key.
 
 ## Demonstration
 
