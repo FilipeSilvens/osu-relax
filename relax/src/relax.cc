@@ -51,7 +51,7 @@ DWORD game_process_id = NULL;
 HANDLE game_process = NULL;
 
 //rng stuff
-mt19937 randGen(GetTickCount() * GetProcessId(nullptr) - time(nullptr) * 69 - 1371);
+mt19937 randGen(GetTickCount() * GetProcessId(nullptr) - time(nullptr) * 69 - 1371 + 55); //random ass calculations to make it as random as possible
 
 // shutdown
 DWORD WINAPI shutdownkey(LPVOID lpParam);
