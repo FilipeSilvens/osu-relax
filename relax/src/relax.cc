@@ -176,9 +176,10 @@ int wmain(int argc, wchar_t* argv[])
 			single_tap_current = obj2time - obj1time;
 		}
 
-		if (time >= object.start_time + delayStart(randGen) && !key_down) 
+		if (time >= object.start_time && !key_down) 
 		{
-
+                        this_thread::sleep_for(chrono::milliseconds(delayStart(randGen)));
+			
 			// chance to issue a 100
 			int hundredchance = rand() % 100 + 1;
 
@@ -195,8 +196,10 @@ int wmain(int argc, wchar_t* argv[])
 			continue;
 		}
 
-		if (time > object.end_time + delayRelease(randGen) && key_down) 
+		if (time > object.end_time && key_down) 
 		{
+			this_thread::sleep_for(chrono::milliseconds(delayRelease(randGen)));
+			
 			// release key.
 			set_key_pressed(active_key, false);
 			key_down = false;
