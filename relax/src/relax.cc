@@ -134,6 +134,8 @@ int wmain(int argc, wchar_t* argv[])
 			isPlaying = true;
 			current_object = 0;
 		}
+		// le optimization
+		this_thread::sleep_for(chrono::milliseconds(1));
 	}
 
 	// wait for the beatmap to start.
@@ -158,11 +160,12 @@ int wmain(int argc, wchar_t* argv[])
 		single_tap_current = single_tap_interval + 1;
 
 		// if elapsed time is less than 5, set current object to 0
-		if (time < 5)
+		// bugged, fix later.
+		/*if (time < 5)
 		{
 			//PlaySound(MAKEINTRESOURCE(READY), NULL, SND_RESOURCE);
 			current_object = 0;
-		}
+		}*/
 
 		// set current hitobject
 		hitobject& object = active_beatmap.hitobjects.at(current_object);
