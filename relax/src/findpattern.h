@@ -15,11 +15,13 @@ DWORD FindPattern(HANDLE process, unsigned char pattern[])
 
 		for (size_t a = 0; a < read_size; a++) 
 		{
+			hit = true;
+			
 			for (size_t j = 0; j < signature_size && hit; j++) 
 			{
-				if (chunk[a + j] == pattern[j]) 
+				if (chunk[a + j] != pattern[j]) 
 				{
-					hit = true;
+					hit = false;
 				}
 			}
 
